@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>E-lectures login form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script language="Javascript" type="text/Javascript">
+        function showpass()
+         {
+             sp=document.getElementById("pswd");
+             if(sp.type==="password")
+             {
+                 sp.type="text";
+             }
+             else
+             {
+                 sp.type="password";
+             }
+         }
+         function validateuname()
+         {
+           username=document.getElementById("usname").value;
+           if(username.length >= 5 && username.length <= 7)
+           {
+                        if(1)
+                        {
+                            
+                        }
+                        else
+                        {
+                            alert("username should contain atleast one capital alphabet,one small alphabet and one letter");
+                            return false;
+                        }    
+           }
+           else
+           {
+               alert("please input username between 5 to 7 characters");
+           }         
+         }
+         function validatepswd()
+         {
+             password=document.getElementById("pswd").value;
+             if(password.length >= 6 && password.length <=10)
+             {
+                 if(1)
+                 {
+                     
+                 }
+                 else
+                 {
+                     alert("password should contain atleast one capital alphabet,one small alphabet and one letter");
+                     return false;
+                 }
+             }
+             else
+             {
+                 alert("please input password between 6 to 10 characters");
+             }
+         }    
+        </script>
+        <style type="text/css">
+        #h
+        {
+            background-color:yellow;
+        }
+        #f
+        {
+            background-color:green;
+        }
+        #f2
+        {
+            text-decoration:none;
+        }
+        #g3
+        {
+            text-decoration:none;
+        }
+        #fp
+        {
+            text-decoration:none;
+        }
+        #s4
+        {
+            text-decoration:none;
+        }
+        #lb
+        {
+            background-color:grey;
+        }
+        </style>
+    </head>
+    <body id="lb">
+        <div align="center" id="h"><h3>E-lectures</h3></div>
+        <div align="center" id="f">
+        <fieldset>
+            <legend align="center">Login Here</legend>
+        <form name="login" action="check_servlet" method="post">
+            <table align="center">
+            <tr><td>
+                <label>Username:-</td>
+                <td><input id="usname" type="text" name="uname" onblur="return validateuname()"></input></label>
+            </td></tr>
+            <tr><td>
+                <label>Password:-</td><td><input id="pswd" type="password" name="pwd" onblur="return validatepswd()"></input></label>
+            </td></tr>
+            </table>
+            <p align="center">
+                <label><input type="checkbox" onclick="showpass()"></input>Show password</label>
+            </p>
+            <p align="center">
+                <a id="fp" href="forgotpassword.xhtml" target="_self">Forgot password?</a>
+            </p>
+            <p align="center">
+                <input type="submit" value="Login"></input>
+            </p>
+            <p align="center">
+                <a id="f2" href="" target="_self" >Login via Facebook</a>
+            </p>
+            <p align="center">
+                <a id="g3" href="" target="_self" >Login via Gmail</a>
+            </p>
+            <p align="center">Not account?</p>
+            <p align="center">
+                <a id="s4" href="signup.html" target="_self">Sign up here</a>
+            </p>
+        </form>
+        </fieldset>
+        </div>
+    </body>
+</html>

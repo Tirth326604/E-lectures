@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>E-lectures signup form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script language="javascript" type="text/javascript">
+         function showpass()
+         {
+             sp=document.getElementById("pswd");
+             sp2=document.getElementById("cpswd");
+             if(sp.type==="password")
+             {
+                 sp.type="text";
+                 sp2.type="text";
+             }
+             else
+             {
+                 sp.type="password";
+                 sp2.type="password";
+             }
+         }
+         function validateuname()
+         {
+           username=document.getElementById("usname").value;
+           if(username.length >= 5 && username.length <= 7)
+           {
+               //ure=/[a-z]+[A-Z]+[0-9]+/;
+                /*if(!(ure.test()))
+                {
+                    alert("Username should contain atleast one capital alphabet,one small alphabet and one letter.");
+                }*/
+           }
+           else
+           {
+               alert("Please input username between 5 to 7 characters.");
+               return false;
+           }         
+         }
+         function validatepswd()
+         {
+             password=document.getElementById("pswd").value;
+             if(password.length >= 6 && password.length <=10)
+             {
+                 //pre=/[a-z]+[A-Z]+[0-9]+/;
+                 /*if(!(pre.test()))
+                 {
+                    alert("Password should contain atleast one capital alphabet,one small alphabet and one letter.");
+                 }*/
+             }
+             else
+             {
+                 alert("Please input password between 6 to 10 characters.");
+                 return false;
+             }
+         }
+         function validatecpswd()
+         {
+            pwd = document.getElementByName("pwd").value;
+            if(pwd !== document.getElementByName("cpwd").value)
+            {
+		alert("Passwords don't match.");
+                return false;
+            }
+         }
+         function validateeid()
+         {
+           //ere=/[a-zA-Z0-9]+\@[a-zA-Z0-9]{3,}\.[a-zA-Z0-9]{3,}/;
+           /*if(!(ere.test()))
+           {
+               alert("Enter valid e-mail id.");
+           }*/
+         }
+         function validatemob()
+         {
+           //mre=/^(\+){0,1}(91){0,1}(-|\s){0,1}[6789][0-9]{9}$/;
+           /*if(!(mre.test()))
+           {
+               alert("Enter valid mobile number.");
+           } */ 
+         }
+        </script>
+        <style type="text/css">
+        #h
+        {
+            background-color:yellow;
+        }
+        #f
+        {
+            background-color:green;
+        }
+        #f2
+        {
+            text-decoration:none;
+        }
+        #g3
+        {
+            text-decoration:none;
+        }
+        #sb
+        {
+            background-color:grey;
+        }
+        </style>
+    </head>
+    <body id="sb">
+        <div align="center" id="h"><h3>E-lectures</h3></div>
+        <div align="center" id="f">
+        <fieldset>
+        <legend align="center">Signup Here</legend>
+        <form action="newuser" method="post">
+            <table align="center">
+            <tr><td>
+                <label>Username:-</td>
+                <td><input id="usname" type="text" name="uname" onblur="return validateuname()" required></input></label>
+            </td></tr>        
+            <tr><td>
+                <label>Name:-</td>
+                <td><input type="text" name="name" required></input></label>
+            </td></tr>
+            <tr><td>
+                <label>Mobile No.:-</td>
+                <td><input id="mob" type="text" name="mo" onblur="return validatemob()" required></input></label>
+            </td></tr>
+            <tr><td>
+                <label>Email id:-</td>
+                <td><input id="emid" type="text" name="eid" onblur="return validateeid()" required></input></label>
+            </td></tr>
+            <tr><td>Qualification:-</td> 
+            <td><select name="qual" required>
+                    <optgroup label="Primary">
+                        <option value="1st">1st</option>
+                        <option value="2nd">2nd</option>
+                        <option value="3rd">3rd</option>
+                        <option value="4th">4th</option>
+                        <option value="5th">5th</option>
+                    </optgroup>
+                    <optgroup label="Upper primary">
+                        <option value="6th">6th</option>
+                        <option value="7th">7th</option>
+                        <option value="8th">8th</option>
+                    </optgroup>
+                    <optgroup label="Secondary">
+                        <option label="9th">9th</option>
+                        <option label="10th">10th</option>
+                    </optgroup>
+                    <optgroup label="Higher secondary">
+                        <option value="11th">11th</option>
+                        <option value="12th">12th</option>
+                    </optgroup> 
+                </select>
+            </td></tr>
+            <tr><td>Gender:-</td>
+                <td>
+                <label>
+                    <input type="radio" name="gender" value="Female" required>Female</input>
+                    <input type="radio" name="gender" value="Male" required>Male</input>
+                </label>
+            </td></tr>
+            <tr><td>
+                <label>Password:-</td>
+                <td><input id="pswd" type="password" name="pwd" onblur="return validatepswd()" required></input></label>
+            </td></tr>
+            <tr><td>
+                <label>Confirm password:-</td>
+                <td><input id="cpswd" type="password" name="cpwd" onblur="return validatecspwd()" required></input></label>
+            </td></tr>
+            </table>
+            <p align="center">
+                <label><input type="checkbox" onclick="showpass()"></input>Show password</label>
+            </p>
+            <p align="center">
+                <input type="submit" value="Signup"></input>
+            </p>
+            <p align="center">
+                <a id="f2" href="" target="_self" >Signup via Facebook</a>
+            </p>
+            <p align="center">
+                <a id="g3" href="" target="_self" >Signup via Gmail</a>
+            </p>
+        </form>
+        </fieldset>
+        </div>
+    </body>
+</html>
